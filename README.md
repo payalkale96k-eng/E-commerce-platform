@@ -1,2 +1,26 @@
-# E-commerce-platform
-🛍️ ShopSphere – E-Commerce Platform | A responsive front-end e-commerce website built with HTML, CSS, and JavaScript, featuring product browsing, search, category filtering, sorting, shopping cart management, and checkout functionality.
+🛒 E-Commerce Platform
+
+A responsive and interactive E-Commerce Website built using HTML, CSS, and JavaScript.
+
+✨ Features
+
+- Product browsing
+- Product search & categories
+- Add to Cart
+- Quantity management
+- Cart total calculation
+- Responsive design
+
+🛠️ Tech Stack
+
+- HTML5
+- CSS3
+- JavaScript
+
+🚀 Run Locally
+
+Clone the repository and open "index.html" in your browser.
+
+👩‍💻 Developer
+
+Payal Kale
