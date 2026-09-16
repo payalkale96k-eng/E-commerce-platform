@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ShopSphere - Online Store</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+
+    <header class="navbar">
+
+        <div class="logo">
+            <i class="fa-solid fa-bag-shopping"></i>
+            ShopSphere
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#categories">Categories</a>
+            <a href="#about">About</a>
+        </nav>
+
+        <div class="nav-actions">
+
+            <button id="searchBtn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+            <button id="cartBtn">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="cartCount">0</span>
+            </button>
+
+        </div>
+
+    </header>
+
+
+    
+    <div class="search-box" id="searchBox">
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search products..."
+        >
+    </div>
+
+
+    
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p class="small-title">WELCOME TO SHOPSPHERE</p>
+
+            <h1>
+                Shop Smart.<br>
+                Live Better.
+            </h1>
+
+            <p>
+                Discover quality products at amazing prices.
+                Everything you need, all in one place.
+            </p>
+
+            <a href="#products" class="shop-btn">
+                Shop Now
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </section>
+
+    <section class="categories" id="categories">
+
+        <h2>Shop by Category</h2>
+
+        <div class="category-container">
+
+            <button class="category-card" data-category="all">
+                <i class="fa-solid fa-border-all"></i>
+                <span>All</span>
+            </button>
+
+            <button class="category-card" data-category="electronics">
+                <i class="fa-solid fa-laptop"></i>
+                <span>Electronics</span>
+            </button>
+
+            <button class="category-card" data-category="fashion">
+                <i class="fa-solid fa-shirt"></i>
+                <span>Fashion</span>
+            </button>
+
+            <button class="category-card" data-category="shoes">
+                <i class="fa-solid fa-shoe-prints"></i>
+                <span>Shoes</span>
+            </button>
+
+            <button class="category-card" data-category="accessories">
+                <i class="fa-solid fa-headphones"></i>
+                <span>Accessories</span>
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="products" id="products">
+
+        <div class="section-heading">
+
+            <div>
+                <p class="small-title">OUR COLLECTION</p>
+                <h2>Featured Products</h2>
+            </div>
+
+            <select id="sortProducts">
+
+                <option value="default">Sort By</option>
+                <option value="low">Price: Low to High</option>
+                <option value="high">Price: High to Low</option>
+                <option value="rating">Top Rated</option>
+
+            </select>
+
+        </div>
+
+
+        <div class="product-grid" id="productGrid">
+            <!-- Products generated using JavaScript -->
+        </div>
+
+    </section>
+
+
+    
+    <section class="about" id="about">
+
+        <div>
+            <p class="small-title">WHY SHOPSPHERE?</p>
+
+            <h2>
+                Everything you need,
+                just a click away.
+            </h2>
+
+            <p>
+                ShopSphere provides a simple and convenient online
+                shopping experience with quality products, secure
+                checkout and fast delivery.
+            </p>
+        </div>
+
+        <div class="features">
+
+            <div>
+                <i class="fa-solid fa-truck"></i>
+                <h3>Fast Delivery</h3>
+                <p>Quick and reliable delivery.</p>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-shield-halved"></i>
+                <h3>Secure Payment</h3>
+                <p>Your transactions are protected.</p>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-headset"></i>
+                <h3>24/7 Support</h3>
+                <p>We're always here to help.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    
+    <footer>
+
+        <div class="footer-logo">
+            <i class="fa-solid fa-bag-shopping"></i>
+            ShopSphere
+        </div>
+
+        <p>
+            © 2026 ShopSphere. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <aside class="cart-sidebar" id="cartSidebar">
+
+        <div class="cart-header">
+
+            <h2>Your Cart</h2>
+
+            <button id="closeCart">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+        <div id="cartItems" class="cart-items">
+            <p class="empty-cart">
+                Your cart is empty.
+            </p>
+        </div>
+
+        <div class="cart-footer">
+
+            <div class="total">
+                <span>Total</span>
+                <strong id="cartTotal">₹0</strong>
+            </div>
+
+            <button class="checkout-btn" id="checkoutBtn">
+                Proceed to Checkout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    
+    <div class="modal" id="checkoutModal">
+
+        <div class="modal-content">
+
+            <button class="close-modal" id="closeModal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <h2>Checkout</h2>
+
+            <form id="checkoutForm">
+
+                <label>Full Name</label>
+                <input type="text" required placeholder="Enter your name">
+
+                <label>Email</label>
+                <input type="email" required placeholder="Enter your email">
+
+                <label>Address</label>
+                <textarea required placeholder="Enter delivery address"></textarea>
+
+                <label>Payment Method</label>
+
+                <select required>
+                    <option value="">Select payment method</option>
+                    <option>Cash on Delivery</option>
+                    <option>UPI</option>
+                    <option>Credit / Debit Card</option>
+                </select>
+
+                <button type="submit" class="place-order">
+                    Place Order
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
